@@ -1,0 +1,275 @@
+/* Importation de polices */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* Variables de couleurs et de styles */
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-gold: #ffd700;
+    --accent-gold-light: #ffe666;
+    --transition: all 0.3s ease-in-out;
+}
+
+/* Styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: rgba(26, 26, 26, 0.9);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--accent-gold);
+    text-shadow: 0 0 5px var(--accent-gold-light);
+}
+
+/* Main content */
+main {
+    padding: 6rem 10% 2rem;
+}
+
+section {
+    margin-bottom: 4rem;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 2rem;
+    display: block;
+    border: 4px solid var(--accent-gold);
+    box-shadow: 0 0 20px var(--accent-gold-light);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: var(--bg-primary);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+    text-decoration: none;
+    color: var(--text-primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+    filter: blur(3px);
+}
+
+.project-card:hover img {
+    filter: blur(0);
+    transform: scale(1.05);
+}
+
+.project-card h3 {
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+}
+
+.project-card p {
+    padding: 0 1rem 1rem;
+    color: var(--text-secondary);
+}
+
+/* Contact section */
+#contact {
+    text-align: center;
+}
+
+#contact h2 {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border: 2px solid var(--accent-gold);
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+#contact h2:hover {
+    background-color: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border-top: 1px solid var(--accent-gold);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 1rem 5%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    main {
+        padding: 5rem 5% 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* CSS to center the button */
+.button-container { /* Or whatever class/ID your container has */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Existing Button Styles (from previous response, adjusted) */
+/* CV Button Styles */
+button {
+    background-color: transparent; /* Or var(--bg-secondary) */
+    color: var(--accent-gold);
+    border: 2px solid var(--accent-gold);
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* Subtle shadow */
+    display: inline-block;      /* Important: Allows padding and margins */
+    margin-top: 1rem;           /* Add some spacing above */
+    outline: none;              /* Remove default outline */
+}
+
+button:hover {
+    background-color: var(--accent-gold);
+    color: var(--bg-primary);    /* Invert colors on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+button a {
+    color: inherit;            /* Inherit color from the button */
+    text-decoration: none;      /* Remove underline */
+    display: block;               /* Make the link fill the button */
+    width: 100%;
+    height: 100%;
+}
+
+button a:focus {
+  outline: none; /* Remove outline on focus */
+}
+
+button:focus {
+  outline: none; /* Remove outline on focus of the button itself */
+}
+
+/* Optional: Adjust for smaller screens */
+@media (max-width: 768px) {
+    button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
