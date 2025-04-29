@@ -11074,13 +11074,15 @@ body {
   border: 0;
 }
 
+
 .masthead {
   position: relative;
   width: 100%;
-  height: 100vh; /* Remplace height: auto */
-  padding: 15rem 0; /* À ajuster selon besoin */
-  min-height: 0; /* Supprime min-height: 35rem */
+  height: 100vh; /* Pleine hauteur écran */
+  min-height: 100vh; /* Garantit le minimum */
   overflow: hidden;
+  padding: 0; /* Désactive le padding si besoin */
+}
  
 }
 .masthead h1, .masthead .h1 {
