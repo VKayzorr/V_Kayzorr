@@ -13,15 +13,12 @@
 
 .background-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-  object-fit: cover !important; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Ni négatif ni supérieur au contenu */
 }
 
 .container {
@@ -11080,13 +11077,10 @@ body {
 .masthead {
   position: relative;
   width: 100%;
-  height: auto;
-  min-height: 35rem;
-  padding: 15rem 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
+  height: 100vh; /* Remplace height: auto */
+  padding: 15rem 0; /* À ajuster selon besoin */
+  min-height: 0; /* Supprime min-height: 35rem */
+  overflow: hidden;
  
 }
 .masthead h1, .masthead .h1 {
