@@ -3,9 +3,9 @@
   position: absolute;
   top: 0;
   left: -110px;
-  width: 150%;
+  width: 120%;
   height: 100%;
-  object-fit: cover;
+  object-fit:fill;
   z-index: -2; 
 }
 
@@ -8302,7 +8302,7 @@ textarea.form-control-lg {
 
 .bg-light {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%) !important;
 }
 
 .bg-dark {
