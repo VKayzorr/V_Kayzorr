@@ -283,11 +283,13 @@ article img:hover {
 
 /* Variables globales */
 :root {
-    bg-primary: #0a0a0a;
-    bg-secondary: #1a1a1a;
-    text-primary: #ffffff;
-    text-secondary: #cccccc;
-    transition: all 0.3s ease-in-out;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-gold: #ffd700;
+    --accent-gold-light: #ffe666;
+    --transition: all 0.3s ease-in-out;
 }
 
 /* Styles de base */
@@ -311,7 +313,7 @@ header {
 h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
-    color: white;
+    color: var(--accent-gold);
     margin-bottom: 1rem;
 }
 
@@ -394,4 +396,3 @@ footer {
     padding: 1rem 0;
     margin-top: 3rem;
 }
-
