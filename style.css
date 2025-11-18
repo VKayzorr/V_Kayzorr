@@ -1,7 +1,7 @@
 /* Importation de polices */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
 
-/* Variables de couleurs et de styles */
+/* Variables de couleurs */
 :root {
     --bg-primary: #0a0a0a;
     --bg-secondary: #1a1a1a;
@@ -9,6 +9,26 @@
     --text-secondary: #cccccc;
     --accent-gold: #ffd700;
     --accent-gold-light: #ffe666;
+}
+
+/* Variables de typographie */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+    --font-size-base: 1rem;
+    --line-height-base: 1.6;
+}
+
+/* Variables d'espacement */
+:root {
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+}
+
+/* Variables de transition */
+:root {
     --transition: all 0.3s ease-in-out;
 }
 
@@ -20,16 +40,16 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: var(--line-height-base);
 }
 
 /* Header */
 header {
     background-color: rgba(26, 26, 26, 0.9);
-    padding: 1rem 5%;
+    padding: var(--spacing-sm) 5%;
     position: fixed;
     width: 100%;
     top: 0;
@@ -39,7 +59,7 @@ header {
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-secondary);
     font-size: 2.5rem;
     color: var(--accent-gold);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -52,7 +72,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 2rem;
+    margin-left: var(--spacing-md);
 }
 
 nav a {
@@ -62,9 +82,12 @@ nav a {
     font-weight: 600;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     color: var(--accent-gold);
     text-shadow: 0 0 5px var(--accent-gold-light);
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
 }
 
 /* Main content */
@@ -73,17 +96,17 @@ main {
 }
 
 section {
-    margin-bottom: 4rem;
+    margin-bottom: var(--spacing-lg);
     background-color: var(--bg-secondary);
     border-radius: 10px;
-    padding: 2rem;
+    padding: var(--spacing-md);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 h2, h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-secondary);
     color: var(--accent-gold);
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-sm);
 }
 
 h2 {
@@ -95,7 +118,7 @@ h2 {
 
 h3 {
     font-size: 1.8rem;
-    margin-top: 1.5rem;
+    margin-top: var(--spacing-md);
 }
 
 .profile-image {
@@ -103,7 +126,7 @@ h3 {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto 2rem;
+    margin: 0 auto var(--spacing-md);
     display: block;
     border: 4px solid var(--accent-gold);
     box-shadow: 0 0 20px var(--accent-gold-light);
@@ -112,8 +135,8 @@ h3 {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
 }
 
 .project-card {
@@ -145,13 +168,13 @@ h3 {
 }
 
 .project-card h3 {
-    padding: 1rem;
+    padding: var(--spacing-sm);
     font-size: 1.5rem;
     color: var(--accent-gold);
 }
 
 .project-card p {
-    padding: 0 1rem 1rem;
+    padding: 0 var(--spacing-sm) var(--spacing-sm);
     color: var(--text-secondary);
 }
 
@@ -168,15 +191,18 @@ h3 {
     transition: var(--transition);
 }
 
-#contact h2:hover {
+#contact h2:hover,
+#contact h2:focus {
     background-color: var(--accent-gold);
     color: var(--bg-primary);
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 1rem 0;
+    padding: var(--spacing-sm) 0;
     background-color: var(--bg-secondary);
     color: var(--text-secondary);
     border-top: 1px solid var(--accent-gold);
@@ -185,7 +211,7 @@ footer {
 /* Responsive design */
 @media screen and (max-width: 768px) {
     header {
-        padding: 1rem 5%;
+        padding: var(--spacing-sm) 5%;
     }
 
     nav ul {
@@ -219,16 +245,14 @@ footer {
     }
 }
 
-/* CSS to center the button */
-.button-container { /* Or whatever class/ID your container has */
+/* Bouton CV */
+.button-container {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: var(--spacing-md);
 }
 
-/* Existing Button Styles (from previous response, adjusted) */
-/* CV Button Styles */
-button {
-    background-color: transparent; /* Or var(--bg-secondary) */
+.cv-button {
+    background-color: transparent;
     color: var(--accent-gold);
     border: 2px solid var(--accent-gold);
     padding: 0.75rem 1.5rem;
@@ -236,39 +260,42 @@ button {
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* Subtle shadow */
-    display: inline-block;      /* Important: Allows padding and margins */
-    margin-top: 1rem;           /* Add some spacing above */
-    outline: none;              /* Remove default outline */
+    transition: var(--transition);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    outline: none;
 }
 
-button:hover {
+.cv-button:hover,
+.cv-button:focus {
     background-color: var(--accent-gold);
-    color: var(--bg-primary);    /* Invert colors on hover */
+    color: var(--bg-primary);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
 }
 
-button a {
-    color: inherit;            /* Inherit color from the button */
-    text-decoration: none;      /* Remove underline */
-    display: block;               /* Make the link fill the button */
+.cv-button a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
     width: 100%;
     height: 100%;
 }
 
-button a:focus {
-  outline: none; /* Remove outline on focus */
+.cv-button a:focus {
+    outline: none;
 }
 
-button:focus {
-  outline: none; /* Remove outline on focus of the button itself */
+.cv-button:focus {
+    outline: none;
 }
 
-/* Optional: Adjust for smaller screens */
+/* Responsive pour les boutons */
 @media (max-width: 768px) {
-    button {
+    .cv-button {
         font-size: 1rem;
         padding: 0.6rem 1.2rem;
     }
