@@ -287,11 +287,10 @@ article img:hover {
     --bg-secondary: #1a1a1a;
     --text-primary: #ffffff;
     --text-secondary: #cccccc;
-    --accent-gold: #ffd700;
-    --accent-gold-light: #ffe666;
+    --accent-gold: #ffffff;
+    --accent-gold-light: #ffffff;
     --transition: all 0.3s ease-in-out;
 }
-
 /* Styles de base */
 body {
     font-family: 'Poppins', sans-serif;
@@ -396,3 +395,4 @@ footer {
     padding: 1rem 0;
     margin-top: 3rem;
 }
+
