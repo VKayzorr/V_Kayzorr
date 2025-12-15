@@ -100,7 +100,7 @@
   .form-group input:focus,
   .form-group textarea:focus {
     border-color: var(--accent-gold);
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   }
   
   .contact-form textarea {
@@ -270,8 +270,8 @@
     --bg-secondary: #1a1a1a;
     --text-primary: #ffffff;
     --text-secondary: #cccccc;
-    --accent-gold: #ffd700;
-    --accent-gold-light: #ffe666;
+    --accent-gold: #ffffff;
+    --accent-gold-light: #ffffff;
     --transition: all 0.3s ease-in-out;
 }
 
