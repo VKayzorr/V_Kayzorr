@@ -1,398 +1,458 @@
-/* Section Contact */
-#contact {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    padding: 5rem 0;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); /* plus de lumière */
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 50px;
-}
+/* =========================================
+   1. CONFIGURATION & VARIABLES (DESIGN SYSTEM)
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* Animated border */
-#contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, var(--accent-gold), transparent);
-    border-radius: 15px;
-    z-index: -1;
-    pointer-events: none;
-    animation: rotateBorder 8s linear infinite;
-}
-
-/* Keyframes for border animation */
-@keyframes rotateBorder {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Contact Section Header */
-#contact h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: var(--accent-gold);
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* éclairé */
-}
-
-/* Container For Contact Form & Information */
-.contact-wrapper {
-    max-width: 900px;
-    margin: 2rem auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
-    padding: 2rem;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1); /* plus clair */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.4); /* plus lumineux */
-    backdrop-filter: blur(5px);
-}
-
-/* Contact Form Styles */
-.contact-form h3 {
-    font-size: 2rem;
-    color: var(--accent-gold);
-    margin-bottom: 1.5rem;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border: none;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.2); /* clair */
-    color: var(--text-primary);
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-    outline: none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--accent-gold);
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-/* Ajouter bordures et lumière aux images */
-article img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-    border: 3px solid var(--accent-gold);
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
-    transition: var(--transition);
-    filter: blur(2px);
-}
-
-article img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.9);
-    filter: blur(0);
-}
-
-.send-button {
-    background-color: var(--accent-gold);
-    color: var(--bg-primary);
-    border: none;
-    padding: 1.2rem 2.5rem;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
-    align-self: center;
-    width: auto;
-    font-weight: 600;
-    outline: none;
-}
-
-.send-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(255, 215, 0, 0.5);
-}
-
-/* Contact Info Styles */
-.contact-info {
-    text-align: left;
-    padding: 2rem;
-}
-
-.contact-info h3 {
-    font-size: 2rem;
-    color: var(--accent-gold);
-    margin-bottom: 1.5rem;
-}
-
-.contact-details {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
-}
-
-.contact-details li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.contact-details i {
-    color: var(--accent-gold);
-    margin-right: 1rem;
-    font-size: 1.4rem;
-    width: 25px;
-    text-align: center;
-}
-
-.contact-details a {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-details a:hover {
-    color: var(--accent-gold);
-}
-
-/* Social Links Styles */
-.social-links {
-    display: flex;
-    justify-content: start;
-    margin-top: 2rem;
-}
-
-.social-links a {
-    color: var(--text-primary);
-    font-size: 1.8rem;
-    margin-right: 1.5rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--accent-gold);
-    transform: scale(1.1);
-}
-
-/* Back Button Styles */
-.back-button {
-    display: inline-block;
-    margin-bottom: 2rem;
-    padding: 0.8rem 2rem;
-    background-color: rgba(255, 215, 0, 0.2);
-    color: var(--accent-gold);
-    text-decoration: none;
-    border: 2px solid var(--accent-gold);
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(255, 215, 0, 0.3);
-    font-size: 1.1rem;
-}
-
-.back-button:hover {
-    background-color: var(--accent-gold);
-    color: var(--bg-primary);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.6);
-}
-
-/* Responsive design */
-@media screen and (max-width: 768px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .contact-form,
-    .contact-info {
-        padding: 1rem;
-    }
-
-    .form-group {
-        margin-bottom: 1rem;
-    }
-
-    #contact h2 {
-        font-size: 2.5rem;
-    }
-
-    .send-button {
-        font-size: 1rem;
-        padding: 1rem 2rem;
-    }
-
-    .contact-info h3 {
-        font-size: 1.8rem;
-    }
-
-    .back-button {
-        font-size: 1rem;
-    }
-
-    .contact-details li,
-    .contact-details a {
-        font-size: 1rem;
-        text-align: center;
-    }
-
-    .contact-details {
-        margin-bottom: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-}
-
-/* Variables globales */
 :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #cccccc;
-    --accent-gold: #ffffff;
-    --accent-gold-light: #ffffff;
-    --transition: all 0.3s ease-in-out;
+    /* Palette Dark Mode Premium */
+    --bg-dark: #050505;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --bg-card-hover: rgba(255, 255, 255, 0.07);
+    
+    /* Typographie */
+    --text-main: #f2f2f2;
+    --text-muted: #a0a0a0;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Manrope', sans-serif;
+
+    /* Accents & Bordures */
+    --accent-color: #6366f1; /* Indigo Électrique */
+    --accent-glow: rgba(99, 102, 241, 0.4);
+    --border-light: rgba(255, 255, 255, 0.08);
+    
+    /* Effets */
+    --glass-blur: blur(12px);
+    --radius-card: 24px;
+    --radius-button: 100px;
+    --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-/* Styles de base */
+
+/* =========================================
+   2. GLOBAL & RESET
+   ========================================= */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    /* Fond subtil "Aurora" */
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
 }
 
-/* Header */
+/* =========================================
+   3. TYPOGRAPHIE & HEADER
+   ========================================= */
 header {
-    background-color: var(--bg-secondary);
-    padding: 2rem 5%;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+    padding: 4rem 1rem 2rem;
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: var(--accent-gold);
-    margin-bottom: 1rem;
-}
-
-nav a {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: var(--transition);
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--accent-gold);
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background-color: var(--accent-gold);
-    color: var(--bg-primary);
-}
-
-/* Main content */
-main {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-}
-
-article {
-    background-color: var(--bg-secondary);
-    border-radius: 10px;
-    padding: 2rem;
-    margin-bottom: 3rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border: 3px solid var(--accent-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 5rem); /* Taille géante responsive */
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, #a5a6f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    letter-spacing: -1px;
+    animation: fadeDown 1s ease-out;
 }
 
 h2 {
-    color: var(--accent-gold);
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--accent-gold);
-    padding-bottom: 0.5rem;
-}
-
-article img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-    border: 2px solid var(--accent-gold-light);
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
-    transition: var(--transition);
-    filter: blur(3px);
-}
-
-article img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.9);
-    filter: blur(0);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--text-main);
+    margin-top: 0;
 }
 
 h3 {
-    color: var(--accent-gold-light);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+p, li {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* =========================================
+   4. NAVIGATION (FLOATING DOCK STYLE)
+   ========================================= */
+/* On cache la nav du flux normal pour la fixer en bas */
+header nav {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    
+    /* Glassmorphism */
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-button);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    
+    display: flex;
+    gap: 1.5rem;
+    transition: var(--transition);
+}
+
+header nav:hover {
+    background: rgba(15, 15, 15, 0.8);
+    transform: translateX(-50%) scale(1.02);
+}
+
+header nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+header nav a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* =========================================
+   5. LAYOUT PRINCIPAL (BENTO GRID)
+   ========================================= */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    display: grid;
+    /* Création de la grille intelligente */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    padding-bottom: 8rem; /* Espace pour le dock */
+}
+
+/* =========================================
+   6. CARTES PROJETS (GLASSMORPHISM)
+   ========================================= */
+article {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-card);
+    padding: 0; /* On retire le padding global pour que l'image touche les bords */
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    /* Animation d'apparition */
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+/* Délai d'animation pour effet cascade */
+article:nth-child(1) { animation-delay: 0.1s; }
+article:nth-child(2) { animation-delay: 0.2s; }
+article:nth-child(3) { animation-delay: 0.3s; }
+article:nth-child(4) { animation-delay: 0.4s; }
+/* ... etc ... */
+
+article:hover {
+    transform: translateY(-10px);
+    background: var(--bg-card-hover);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Images dans les cartes */
+article > a {
+    display: block;
+    width: 100%;
+    height: 250px; /* Hauteur fixe pour l'image */
+    overflow: hidden;
+}
+
+article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: grayscale(20%);
+}
+
+article:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* Contenu textuel de la carte */
+article h2, article p, article h3, article ul {
+    padding: 0 2rem; /* Remet le padding pour le texte */
+}
+
+article h2 {
+    margin-top: 1.5rem;
     font-size: 1.8rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
 }
 
-ul {
-    padding-left: 1.5rem;
+article ul {
+    list-style: none;
+    padding-left: 2rem;
 }
 
-li {
-    margin-bottom: 1rem;
+article ul li {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.95rem;
 }
 
-/* Footer */
+article ul li::before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: -1rem;
+    font-size: 1.2em;
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
 footer {
-    background-color: var(--bg-secondary);
-    color: var(--text-secondary);
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 3rem;
+    padding: 3rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-light);
+    margin-top: auto;
 }
 
+/* =========================================
+   8. ANIMATIONS (KEYFRAMES)
+   ========================================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   9. RESPONSIVE MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    main {
+        grid-template-columns: 1fr; /* Une seule colonne */
+        padding: 1rem;
+    }
+    
+    header nav {
+        width: 80%; /* Dock plus large sur mobile */
+        justify-content: center;
+        bottom: 1.5rem;
+    }
+    
+    article {
+        margin-bottom: 0;
+    }
+}
+/* =========================================
+   10. MODAL VIEW (POPUP)
+   ========================================= */
+
+/* --- A. Masquer les détails dans la Grille --- */
+/* Dans la grille, on ne veut voir que l'image, le titre et le premier paragraphe */
+article {
+    cursor: pointer; /* Indique que c'est cliquable */
+}
+
+/* On cache les listes et les sous-titres dans la grille */
+article ul, 
+article h3, 
+article p:not(:nth-of-type(1)) { 
+    display: none; 
+}
+
+/* On garde juste le premier paragraphe (l'accroche) et on le limite à 3 lignes */
+article p:nth-of-type(1) {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+/* --- B. Design de la Modale --- */
+.modal {
+    display: none; /* Caché par défaut */
+    position: fixed; 
+    z-index: 2000; /* Au-dessus de tout (même du dock) */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permet de scroller si le contenu est long */
+    
+    /* Fond sombre avec flou (Backdrop) */
+    background-color: rgba(5, 5, 5, 0.8); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Centrage Flexbox */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Classe active ajoutée par JS pour afficher */
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Contenu de la modale (La carte agrandie) */
+.modal-content {
+    background: #0f0f0f;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-card);
+    width: 90%;
+    max-width: 800px; /* Largeur max agréable */
+    max-height: 90vh; /* Ne dépasse pas 90% de la hauteur d'écran */
+    overflow-y: auto; /* Scroll interne */
+    position: relative;
+    padding: 0 0 2rem 0;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    
+    /* Animation d'entrée : Zoom In */
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+/* --- C. Réafficher les détails DANS la modale --- */
+/* Ici on force l'affichage de ce qu'on a caché dans la grille */
+.modal-content ul, 
+.modal-content h3, 
+.modal-content p {
+    display: block !important;
+    padding: 0 2.5rem; /* Marges internes agréables */
+    color: var(--text-muted);
+}
+
+.modal-content h2 {
+    font-size: 2.5rem;
+    padding: 1.5rem 2.5rem 0;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.modal-content h3 {
+    margin-top: 2rem;
+    color: var(--accent-color);
+}
+
+.modal-content ul li {
+    margin-bottom: 0.8rem;
+}
+
+/* Image dans la modale */
+.modal-content a {
+    pointer-events: none; /* Désactive le lien sur l'image dans la modale */
+    height: 350px; /* Image plus grande */
+}
+
+.modal-content img {
+    filter: grayscale(0%); /* Image en couleur directe */
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Bouton Fermer (Croix) */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+    background: rgba(0,0,0,0.5);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    background: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+/* Scrollbar personnalisée pour la modale */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: var(--border-light);
+    border-radius: 4px;
+}
+
+/* Responsive Modale */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+    .modal-content a {
+        height: 200px;
+    }
+    .modal-content h2 {
+        font-size: 1.8rem;
+        padding: 1rem 1.5rem 0;
+    }
+    .modal-content p, .modal-content ul, .modal-content h3 {
+        padding: 0 1.5rem;
+    }
+}
