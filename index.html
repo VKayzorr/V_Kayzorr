@@ -14,8 +14,9 @@
     <nav class="floating-dock">
         <a href="#home" title="Accueil"><i data-feather="home"></i></a>
         <a href="#about" title="À propos"><i data-feather="user"></i></a>
+        <a href="#experience" title="Expérience"><i data-feather="briefcase"></i></a>
         <a href="#projects" title="Projets"><i data-feather="grid"></i></a>
-        <a href="mailto:tonemail@gmail.com" title="Contact"><i data-feather="mail"></i></a>
+        <a href="mailto:bouchot.theo52@gmail.com" title="Contact"><i data-feather="mail"></i></a>
     </nav>
 
     <header id="home" class="hero-section">
@@ -37,7 +38,7 @@
                 Je transforme des concepts abstraits en expériences digitales immersives et fonctionnelles.
             </p>
 
-            <a href="Projets\projets.html" class="cta-button">
+            <a href="Projets/projets.html" class="cta-button">
                 Voir mes travaux <i data-feather="arrow-down-right"></i>
             </a>
         </div>
@@ -65,12 +66,67 @@
         <div class="about-grid">
             <div class="about-text">
                 <h2>À propos</h2>
-                <p>Je m’appelle <strong>Théo Bouchot</strong>, j’ai 19 ans et je suis étudiant en BUT MMI à Troyes. Passionné par l'intersection entre le design et la technique, je cherche toujours à repousser les limites du web.</p>
+                <p>Je m’appelle <strong>Théo Bouchot</strong>, j’ai 18 ans et je suis étudiant en BUT MMI à Troyes. Passionné par l'intersection entre le design et la technique, je cherche toujours à repousser les limites du web.</p>
                 <p>Mon objectif ? Rejoindre une structure dynamique en alternance pour concevoir les interfaces de demain, alliant esthétique et performance.</p>
             </div>
             <div class="about-stat">
-                <span class="big-number">19</span>
+                <span class="big-number">18</span>
                 <span class="stat-label">Ans &<br>Passionné</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience-section">
+        <div class="section-header">
+            <h2>Expérience en Alternance</h2>
+            <p class="subtitle-highlight">Chargé de Communication — Ville de Langres & Grand Langres (1 an)</p>
+            <p>Durant cette année d'alternance, j'ai eu l'opportunité de travailler sur une stratégie de communication globale au sein d'une collectivité territoriale.</p>
+        </div>
+
+        <div class="missions-grid">
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i data-feather="edit-3"></i>
+                </div>
+                <h3>Rédaction & Stratégie</h3>
+                <ul>
+                    <li>Participation à la stratégie de communication globale.</li>
+                    <li>Rédaction de communiqué de presse.</li>
+                </ul>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i data-feather="pen-tool"></i>
+                </div>
+                <h3>Création Graphique</h3>
+                <ul>
+                    <li>Conception de supports Print (Affiches, flyers, Roll-Up).</li>
+                    <li>Création de visuels pour le web et les réseaux.</li>
+                    <li>Maîtrise de la suite Adobe (Ps, Ai, Id).</li>
+                </ul>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i data-feather="share-2"></i>
+                </div>
+                <h3>Communication Digitale</h3>
+                <ul>
+                    <li>Community Management (Facebook, Instagram, Lumiplay).</li>
+                    <li>Mise à jour et gestion des sites web institutionnels.</li>
+                </ul>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i data-feather="camera"></i>
+                </div>
+                <h3>Terrain & Événementiel</h3>
+                <ul>
+                    <li>Couverture médiatique (Inaugurations, événements).</li>
+                    <li>Prise de vue photographique.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -255,7 +311,7 @@
     <footer>
         <div class="footer-content">
             <p>Un projet ? Une opportunité d'alternance ?</p>
-            <a href="mailto:tonemail@gmail.com" class="big-link">Let's Talk.</a>
+            <a href="mailto:bouchot.theo52@gmail.com" class="big-link">Let's Talk.</a>
             <div class="footer-bottom">
                 <p>&copy; 2026 Théo Bouchot. Designed & Coded with passion.</p>
                 <div class="socials">
@@ -286,10 +342,10 @@
 
         articles.forEach(article => {
             article.addEventListener("click", function(e) {
-                // IMPORTANT : Si on clique sur un lien <a> (l'image), on ne fait rien (laisser la redirection se faire)
+                // Si on clique sur un lien <a> (l'image), on ne fait rien
                 if(e.target.closest('a')) return;
 
-                // Sinon, c'est un clic sur le texte => On ouvre la modale
+                // Sinon, on ouvre la modale
                 const img = article.querySelector(".card-image img").src;
                 const title = article.querySelector("h2").innerText;
                 const category = article.querySelector("h3").innerText;
@@ -307,7 +363,7 @@
                 `;
                 
                 modal.classList.add("active");
-                document.body.style.overflow = "hidden"; // Empêche de scroller derrière
+                document.body.style.overflow = "hidden"; 
             });
         });
 
@@ -327,8 +383,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
